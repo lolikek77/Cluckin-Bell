@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Reservation.css">
+    <title>Reservation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        #showSuccess:checked ~ .success-message {
+            display: block;
+        }
+        
+        #showSuccess:checked ~ .reservation-form {
+            display: none;
+        }
+        
+        #showSuccess:checked ~ .reservation-button {
+            display: none;
+        }
+        
+        #showSuccess {
+            display: none;
+        }
+        
+        .close-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b 0%, #ffd700 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 50px;
+            font-size: 22px;
+            border-radius: 15px;
+            font-family: 'Irish Grover', cursive;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+            cursor: pointer;
+            margin-top: 25px;
+        }
+        
+        .close-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 107, 107, 0.6);
+            background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 100%);
+        }
+        
+        .refresh-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4ecdc4 0%, #44a08d 100%);
+            color: white;
+            text-decoration: none;
+            padding: 18px 50px;
+            font-size: 22px;
+            border-radius: 15px;
+            font-family: 'Irish Grover', cursive;
+            transition: all 0.3s;
+            box-shadow: 0 8px 20px rgba(78, 205, 196, 0.4);
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            border: none;
+            cursor: pointer;
+            margin-top: 15px;
+            margin-left: 15px;
+        }
+        
+        .refresh-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(78, 205, 196, 0.6);
+            background: linear-gradient(135deg, #44a08d 0%, #4ecdc4 100%);
+        }
+        
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="C:\Users\Алия\Downloads\Telegram Desktop\html\html\foto\3d2f360944e116c447dd50e6af0da3e7e43493be.png" alt="Логотип Cluckin Bell" width="120" height="120">
+            <a href="Cluckin Bell.html">Cluckin Bell</a>
+        </div>
+        <nav>
+           <a href="index.html"><i class="fas fa-home"></i> Home</a>
+           <a href="Menu.html"><i class="fas fa-utensils"></i> Menu☆</a> 
+           <a href="Kazan.html"><i class="fas fa-city"></i> Kazan↓</a>
+           <a href="Message.html"><i class="fas fa-envelope"></i> Message✉️</a>
+           <a href="Balance.html"><i class="fas fa-wallet"></i> Balance</a>     
+        </nav>
+    </header>
+    
+    <main>
+        <div class="promo-container">
+            <div class="promo-card">
+                <h1 class="reservation-main-title">ЗАКАЗ СТОЛИКА</h1>
+                
+                <div class="reservation-content">
+                    <div class="notifications-container">
+                        <div class="notification-item">
+                            <div class="notification-text">
+                                В СЛУЧАЕ ОПОЗДАНИЯ БРОНЬ СОХРАНЯЕТСЯ В ТЕЧЕНИЕ 15 МИНУТ!
+                            </div>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-text">
+                                ЧТОБЫ ЗАКАЗЫВАТЬ 18+ НАПИТКИ, ВЫ ДОЛЖНЫ ПРЕДОСТАВИТЬ ОРИГИНАЛ ПАСПОРТА!!
+                            </div>
+                        </div>
+                        
+                        <div class="notification-item">
+                            <div class="notification-text">
+                                МЫ НИКОГДА НЕ ПЕРЕДАДИМ ВАШИ ДАННЫЕ ТРЕТЬИМ ЛИЦАМ!
+                            </div>
+                        </div>
+                        
+                        <div class="notifications-en">
+                            <div class="notification-item notification-item-en">
+                                <div class="notification-text notification-text-en">
+                                    IF YOU ARE LATE, YOUR RESERVATION WILL BE HELD FOR 15 MINUTES!
+                                </div>
+                            </div>
+                            
+                            <div class="notification-item notification-item-en">
+                                <div class="notification-text notification-text-en">
+                                    TO ORDER DRINKS 18+, YOU MUST PROVIDE YOUR ORIGINAL PASSPORT!!
+                                </div>
+                            </div>
+                            
+                            <div class="notification-item notification-item-en">
+                                <div class="notification-text notification-text-en">
+                                    WE WILL NEVER SHARE YOUR INFORMATION WITH ANY THIRD PARTIES!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <input type="checkbox" id="showSuccess">
+                    
+                    <div class="reservation-form">
+                        <div class="form-group">
+                            <h3 class="form-title">НА ЧЬЕ ИМЯ БРОНИРУЕМ?</h3>
+                            <input type="text" class="form-input" placeholder="Введите ваше имя" id="clientName">
+                        </div>
+                        
+                        <div class="form-group">
+                            <h3 class="form-title">НОМЕР ТЕЛЕФОНА</h3>
+                            <input type="text" class="form-input" placeholder="+7 (XXX) XXX-XX-XX" id="clientPhone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <h3 class="form-title">КОГДА ПРИДЕШЬ?</h3>
+                            <input type="text" class="form-input" placeholder="ДД.ММ.ГГГГ ЧЧ:ММ" id="clientTime">
+                        </div>
+                    </div>
+                    
+                    <label for="showSuccess" class="reservation-button">
+                        <i class="fas fa-calendar-check"></i> ЗАБРОНИРОВАТЬ
+                    </label>
+                    
+                    <div class="success-message">
+                        <div class="success-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        
+                        <h2 class="success-title">ВЫ ЗАБРОНИРОВАЛИ!</h2>
+                        
+                        <p class="success-text">
+                            Ваш столик успешно забронирован!<br>
+                            Мы с нетерпением ждем вашего визита!
+                        </p>
+                        
+                        <div class="booking-details">
+                            <div class="detail-item">
+                                <span class="detail-label">Имя:</span>
+                                <span class="detail-value" id="displayName">Гость</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Телефон:</span>
+                                <span class="detail-value" id="displayPhone">не указан</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Время:</span>
+                                <span class="detail-value" id="displayTime">не указано</span>
+                            </div>
+                            <div class="detail-item">
+                                <span class="detail-label">Номер брони:</span>
+                                <span class="detail-value">#CB-<span id="bookingNumber">2847</span></span>
+                            </div>
+                        </div>
+                        
+                        <div class="reminder-text">
+                            ⚠️ Напоминание: При опоздании более 15 минут<br>
+                            бронь автоматически отменяется
+                        </div>
+                        
+                        <div class="button-container">
+                            <label for="showSuccess" class="close-button">
+                                <i class="fas fa-times"></i> ЗАКРЫТЬ
+                            </label>
+                            
+                            <a href="reservation.html" class="refresh-button">
+                                <i class="fas fa-redo"></i> НОВАЯ БРОНЬ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features-card">
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                    <h3 class="feature-title">15 минут ожидания</h3>
+                    <p class="feature-desc">Ваш столик будет ждать вас в течение 15 минут после указанного времени</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="feature-title">Безопасность данных</h3>
+                    <p class="feature-desc">Ваши персональные данные защищены и никогда не передаются третьим лицам</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon"><i class="fas fa-user-check"></i></div>
+                    <h3 class="feature-title">Возрастной контроль</h3>
+                    <p class="feature-desc">Для заказа алкогольных напитков необходим оригинал паспорта</p>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <nav>
+           <a href="Geolog.html"><i class="fas fa-map-marker-alt"></i> geolocation</a> 
+           <a href="QR.html"><i class="fas fa-qrcode"></i> QR-Code</a>
+           <a href="sapport.html"><i class="fas fa-headset"></i> support</a>
+           <a href="reservation.html" style="color: #ffd700;"><i class="fas fa-book"></i> reservation</a>   
+        </nav>
+    </footer>
+</body>
+</html>
