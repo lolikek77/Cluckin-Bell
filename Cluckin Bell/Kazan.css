@@ -1,0 +1,381 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) fixed;
+    background-attachment: fixed;
+    color: white;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.logo-container img {
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.logo-container a[href="Cluckin Bell.html"] {
+    display: inline-block;
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+    text-decoration: none;
+    margin-top: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 15px 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+header nav a {
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 12px 24px;
+    transition: all 0.3s;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+header nav a:hover::after {
+    width: 80%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.address-card {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+}
+
+.address-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.address-nav li {
+    margin: 0;
+}
+
+.address-nav a {
+    display: inline-block;
+    background: linear-gradient(135deg, #4285F4 0%, #34A853 100%);
+    color: white;
+    text-decoration: none;
+    padding: 20px 50px;
+    font-size: 24px;
+    border-radius: 15px;
+    font-family: 'Irish Grover', cursive;
+    transition: all 0.3s;
+    box-shadow: 0 5px 15px rgba(66, 133, 244, 0.4);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    min-width: 300px;
+}
+
+.address-nav a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(66, 133, 244, 0.6);
+    background: linear-gradient(135deg, #34A853 0%, #4285F4 100%);
+}
+
+.address-nav a:active {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(66, 133, 244, 0.5);
+}
+
+.address-nav a::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 50%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    transform: rotate(30deg);
+    transition: all 0.5s;
+    opacity: 0;
+}
+
+.address-nav a:hover::after {
+    opacity: 1;
+    transform: rotate(30deg) translate(10%, 10%);
+}
+
+.object-image {
+    display: block;
+    margin: 30px auto 0;
+    border-radius: 15px;
+    border: 4px solid rgba(255, 215, 0, 0.7);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+    max-width: 100%;
+    height: auto;
+}
+
+.object-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+}
+
+.info-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin-top: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.info-title {
+    font-family: 'Irish Grover', cursive;
+    font-size: 28px;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.info-list {
+    list-style: none;
+    text-align: left;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.info-list li {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-left: 30px;
+    position: relative;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.info-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin-top: auto;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer nav a {
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer nav a:hover {
+    color: #ffd700;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    header nav, footer nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    header nav a, footer nav a {
+        font-size: 16px;
+        padding: 10px 15px;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .address-card {
+        padding: 30px 20px;
+        max-width: 95%;
+    }
+    
+    .address-nav a {
+        padding: 18px 40px;
+        font-size: 22px;
+        min-width: 280px;
+    }
+    
+    .object-image {
+        max-width: 95%;
+        margin: 20px auto;
+    }
+    
+    .info-card {
+        padding: 25px 20px;
+        max-width: 95%;
+    }
+    
+    .info-title {
+        font-size: 24px;
+    }
+    
+    .info-list li {
+        font-size: 16px;
+    }
+    
+    .logo-container a[href="Cluckin Bell.html"] {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav, footer nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header nav a, footer nav a {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .address-card, .info-card {
+        min-width: 95%;
+        max-width: 95%;
+    }
+    
+    .address-nav a {
+        padding: 16px 30px;
+        font-size: 20px;
+        min-width: 250px;
+    }
+    
+    .object-image {
+        max-width: 100%;
+    }
+    
+    .info-list li {
+        font-size: 15px;
+        padding-left: 25px;
+    }
+    
+    .logo-container a[href="Cluckin Bell.html"] {
+        font-size: 24px;
+    }
+}

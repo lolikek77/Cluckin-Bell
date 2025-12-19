@@ -1,0 +1,461 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) fixed;
+    background-attachment: fixed;
+    color: white;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.logo-container img {
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.logo-container a[href="Cluckin Bell.html"] {
+    display: inline-block;
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+    text-decoration: none;
+    margin-top: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 15px 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+header nav a {
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 12px 24px;
+    transition: all 0.3s;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+header nav a:hover::after {
+    width: 80%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.cards-row {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 40px;
+    align-items: stretch;
+}
+
+.balance-card {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    flex: 1 1 auto;
+}
+
+.wide-card {
+    flex: 1;
+    min-width: 450px;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 500px;
+}
+
+.wallet-title {
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+    color: #fff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.time-subtitle {
+    font-family: 'Irish Grover', cursive;
+    font-size: 22px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 15px;
+    font-style: italic;
+    letter-spacing: 1px;
+    text-align: center;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.pizza-price {
+    font-family: 'Irish Grover', cursive;
+    font-size: 22px;
+    color: #ff6b6b;
+    margin-bottom: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+    min-height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.content-image {
+    display: block;
+    margin: 15px auto;
+    border-radius: 15px;
+    border: 3px solid rgba(255, 215, 0, 0.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+    max-width: 100%;
+    height: auto;
+    flex-grow: 1;
+    object-fit: cover;
+    width: 100%;
+    max-height: 250px;
+}
+
+.content-image:hover {
+    transform: scale(1.02);
+}
+
+.image-with-text {
+    position: relative;
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.large-image-container {
+    position: relative;
+    width: 100%;
+    max-width: 1125px; 
+}
+
+.large-image {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    object-fit: cover;
+    display: block;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+    text-align: center;
+    text-shadow: 
+        3px 3px 6px rgba(0, 0, 0, 0.9),
+        0 0 15px rgba(0, 0, 0, 0.7),
+        0 0 25px rgba(0, 0, 0, 0.5);
+    max-width: 90%;
+    line-height: 1.5;
+    font-weight: bold;
+    padding: 0;
+    background: none;
+    border: none;
+    backdrop-filter: none;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.green-button {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border: none;
+    padding: 18px 40px;
+    font-size: 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 15px 0 0 0;
+    transition: all 0.3s;
+    font-family: 'Irish Grover', cursive;
+    min-width: 280px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 350px;
+}
+
+.green-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6);
+    background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+}
+
+.green-button:active {
+    transform: translateY(-1px);
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin-top: 50px;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer nav a {
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer nav a:hover {
+    color: #ffd700;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 1024px) {
+    .image-with-text,
+    .large-image-container {
+        max-width: 950px;
+    }
+    
+    .large-image {
+        max-height: 450px;
+    }
+    
+    .overlay-text {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav, footer nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    header nav a, footer nav a {
+        font-size: 16px;
+        padding: 8px 15px;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .cards-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    
+    .wide-card {
+        min-width: 90%;
+        max-width: 90%;
+    }
+    
+    .balance-card {
+        padding: 25px;
+    }
+    
+    .wallet-title {
+        font-size: 24px;
+        min-height: 35px;
+    }
+    
+    .time-subtitle, .pizza-price {
+        font-size: 20px;
+        min-height: 25px;
+    }
+    
+    .content-image {
+        max-height: 200px;
+    }
+    
+    .image-with-text,
+    .large-image-container {
+        max-width: 95%;
+    }
+    
+    .large-image {
+        max-height: 350px;
+        border-width: 3px;
+    }
+    
+    .overlay-text {
+        font-size: 22px;
+        max-width: 95%;
+        text-shadow: 
+            2px 2px 4px rgba(0, 0, 0, 0.8),
+            0 0 10px rgba(0, 0, 0, 0.5);
+        letter-spacing: 1px;
+    }
+    
+    .green-button {
+        min-width: 250px;
+        padding: 15px 30px;
+        font-size: 18px;
+        max-width: 300px;
+    }
+    
+    .logo-container a[href="Cluckin Bell.html"] {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav, footer nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .wide-card {
+        min-width: 95%;
+        max-width: 95%;
+    }
+    
+    .content-image {
+        max-height: 180px;
+    }
+    
+    .large-image {
+        max-height: 280px;
+    }
+    
+    .overlay-text {
+        font-size: 18px;
+        line-height: 1.4;
+        text-shadow: 
+            1px 1px 3px rgba(0, 0, 0, 0.8),
+            0 0 8px rgba(0, 0, 0, 0.4);
+    }
+    
+    .green-button {
+        min-width: 200px;
+        padding: 15px 25px;
+        font-size: 16px;
+        max-width: 250px;
+    }
+    
+    .wallet-title {
+        font-size: 22px;
+    }
+    
+    .time-subtitle, .pizza-price {
+        font-size: 18px;
+    }
+}

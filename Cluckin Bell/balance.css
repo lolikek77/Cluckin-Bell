@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) fixed;
+    background-attachment: fixed;
+    color: white;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.logo-container img {
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.logo-container a[href="Cluckin Bell.html"] {
+    display: inline-block;
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+    text-decoration: none;
+    margin-top: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 15px 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+header nav a {
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+header nav a:hover::after {
+    width: 80%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.balance-card {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 600px;
+    width: 90%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.wallet-title {
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+    color: #ffd700;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.balance-display {
+    margin: 30px 0;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.balance-label {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+}
+
+.balance-amount {
+    font-family: 'Irish Grover', cursive;
+    font-size: 48px;
+    color: #fff;
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+    margin: 20px 0;
+}
+
+.rub {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.green-button {
+    background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+    color: white;
+    border: none;
+    padding: 20px 50px;
+    font-size: 22px;
+    border-radius: 12px;
+    cursor: pointer;
+    margin: 30px 0;
+    transition: all 0.3s;
+    font-family: 'Irish Grover', cursive;
+    min-width: 300px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.green-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6);
+    background: linear-gradient(135deg, #20c997 0%, #28a745 100%);
+}
+
+.green-button:active {
+    transform: translateY(-1px);
+}
+
+.message-box {
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 800px;
+    width: 90%;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.message-text {
+    font-family: 'Irish Grover', cursive;
+    font-size: 20px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 15px;
+}
+
+.message-text:last-child {
+    margin-bottom: 0;
+    color: #ffd700;
+    font-size: 22px;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin-top: auto;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer nav a {
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+}
+
+footer nav a:hover {
+    color: #ffd700;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    header nav, footer nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    header nav a, footer nav a {
+        font-size: 16px;
+        padding: 8px 15px;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .balance-card {
+        padding: 25px;
+    }
+    
+    .wallet-title {
+        font-size: 24px;
+    }
+    
+    .balance-amount {
+        font-size: 36px;
+    }
+    
+    .green-button {
+        min-width: 250px;
+        padding: 18px 30px;
+        font-size: 18px;
+    }
+    
+    .message-text {
+        font-size: 18px;
+    }
+    
+    .logo-container a[href="Cluckin Bell.html"] {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav, footer nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .green-button {
+        min-width: 200px;
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    
+    .balance-amount {
+        font-size: 28px;
+    }
+}

@@ -1,0 +1,806 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) fixed;
+    background-attachment: fixed;
+    color: white;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.logo-container img {
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.logo-container a[href="Cluckin Bell.html"] {
+    display: inline-block;
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+    text-decoration: none;
+    margin-top: 10px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+header nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 15px 0;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+header nav a {
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+header nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+header nav a:hover::after {
+    width: 80%;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.promo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.promo-card {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    border-radius: 25px;
+    padding: 50px 40px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 900px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+}
+
+.promo-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #ffd700, #ff6b6b, #4ecdc4);
+    border-radius: 25px 25px 0 0;
+}
+
+.promo-card::after {
+    content: '📅 🕐 🍽️';
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    opacity: 0.3;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.promo-title {
+    font-family: 'Irish Grover', cursive;
+    font-size: 36px;
+    color: #ffd700;
+    margin-bottom: 40px;
+    text-align: center;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+    text-transform: uppercase;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+}
+
+.promo-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+}
+
+.reservation-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+.reservation-main-title {
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+    color: #ffd700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    padding: 15px;
+    background: linear-gradient(to right, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+    border-radius: 15px;
+    border: 2px solid rgba(255, 215, 0, 0.3);
+}
+
+.notifications-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.notification-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    border-left: 4px solid #ff6b6b;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.notification-item:hover {
+    background: rgba(255, 255, 255, 0.08);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.notification-item::before {
+    content: '⚠️';
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+}
+
+.notification-text {
+    font-family: 'Irish Grover', cursive;
+    font-size: 20px;
+    color: #fff;
+    margin-left: 40px;
+    line-height: 1.5;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.notifications-en {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.notification-item-en {
+    border-left-color: #4ecdc4;
+}
+
+.notification-item-en::before {
+    content: 'ℹ️';
+}
+
+.notification-text-en {
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+    font-style: italic;
+}
+
+.reservation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 20px;
+    padding: 40px;
+    border: 2px solid rgba(255, 215, 0, 0.2);
+}
+
+.form-title {
+    font-family: 'Irish Grover', cursive;
+    font-size: 28px;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    text-align: left;
+}
+
+.form-label {
+    font-family: 'Irish Grover', cursive;
+    font-size: 22px;
+    color: #fff;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.form-input {
+    padding: 18px 20px;
+    font-size: 18px;
+    font-family: 'Irish Grover', cursive;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    color: white;
+    transition: all 0.3s;
+    outline: none;
+}
+
+.form-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Arial', sans-serif;
+}
+
+.form-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    border-color: #ffd700;
+    box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.form-input:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.reservation-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffd700 100%);
+    color: white;
+    text-decoration: none;
+    padding: 22px 60px;
+    font-size: 26px;
+    border-radius: 15px;
+    font-family: 'Irish Grover', cursive;
+    transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    cursor: pointer;
+    min-width: 350px;
+    margin-top: 30px;
+    animation: pulse 2s infinite;
+    text-align: center;
+}
+
+.reservation-button:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(255, 107, 107, 0.6);
+    background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 100%);
+    animation: none;
+    color: white;
+}
+
+.reservation-button:active {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 107, 107, 0.5);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(255, 107, 107, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 107, 107, 0); }
+}
+
+.success-message {
+    display: none;
+    background: linear-gradient(135deg, rgba(78, 205, 196, 0.2), rgba(68, 160, 141, 0.2));
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 30px;
+    border: 3px solid rgba(78, 205, 196, 0.4);
+    text-align: center;
+    animation: messageAppear 0.5s ease-out forwards;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes messageAppear {
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.success-icon {
+    font-size: 70px;
+    color: #4ecdc4;
+    margin-bottom: 25px;
+    animation: iconPulse 2s infinite;
+}
+
+@keyframes iconPulse {
+    0%, 100% { 
+        transform: scale(1);
+        filter: drop-shadow(0 0 10px rgba(78, 205, 196, 0.4));
+    }
+    50% { 
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 20px rgba(78, 205, 196, 0.6));
+    }
+}
+
+.success-title {
+    font-family: 'Irish Grover', cursive;
+    font-size: 32px;
+    color: #4ecdc4;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+.success-text {
+    font-family: 'Irish Grover', cursive;
+    font-size: 22px;
+    color: white;
+    margin-bottom: 30px;
+    line-height: 1.5;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.booking-details {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: left;
+}
+
+.detail-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.detail-label {
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.detail-value {
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.reminder-text {
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    color: #ff6b6b;
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #ff6b6b;
+}
+
+.close-button {
+    display: inline-block;
+    background: linear-gradient(135deg, #ff6b6b 0%, #ffd700 100%);
+    color: white;
+    text-decoration: none;
+    padding: 18px 50px;
+    font-size: 22px;
+    border-radius: 15px;
+    font-family: 'Irish Grover', cursive;
+    transition: all 0.3s;
+    box-shadow: 0 8px 20px rgba(255, 107, 107, 0.4);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 25px;
+}
+
+.close-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(255, 107, 107, 0.6);
+    background: linear-gradient(135deg, #ffd700 0%, #ff6b6b 100%);
+}
+
+.features-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+    margin-top: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 15px;
+    transition: all 0.3s;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+    background: rgba(0, 0, 0, 0.4);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #ffd700;
+}
+
+.feature-title {
+    font-family: 'Irish Grover', cursive;
+    font-size: 20px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.feature-desc {
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.5;
+}
+
+footer {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    margin-top: auto;
+    border-top: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+footer nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+footer nav a {
+    color: #fff;
+    font-family: 'Irish Grover', cursive;
+    font-size: 18px;
+    text-decoration: none;
+    padding: 10px 20px;
+    transition: all 0.3s;
+    text-align: center;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+footer nav a:hover {
+    color: #ffd700;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+    header nav, footer nav {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    
+    header nav a, footer nav a {
+        font-size: 16px;
+        padding: 10px 15px;
+        flex: 1;
+        min-width: 120px;
+    }
+    
+    .promo-card {
+        padding: 40px 25px;
+        max-width: 95%;
+    }
+    
+    .promo-title {
+        font-size: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .reservation-main-title {
+        font-size: 28px;
+        padding: 12px;
+    }
+    
+    .notification-text {
+        font-size: 18px;
+        margin-left: 35px;
+    }
+    
+    .notification-text-en {
+        font-size: 16px;
+    }
+    
+    .reservation-form {
+        padding: 30px 20px;
+    }
+    
+    .form-title {
+        font-size: 24px;
+    }
+    
+    .form-label {
+        font-size: 20px;
+    }
+    
+    .form-input {
+        padding: 15px;
+        font-size: 16px;
+    }
+    
+    .reservation-button {
+        padding: 20px 40px;
+        font-size: 22px;
+        min-width: 300px;
+    }
+    
+    .success-message {
+        padding: 30px 20px;
+    }
+    
+    .success-icon {
+        font-size: 50px;
+    }
+    
+    .success-title {
+        font-size: 26px;
+    }
+    
+    .success-text {
+        font-size: 18px;
+    }
+    
+    .booking-details {
+        padding: 20px 15px;
+    }
+    
+    .detail-label,
+    .detail-value {
+        font-size: 16px;
+    }
+    
+    .reminder-text {
+        font-size: 16px;
+    }
+    
+    .close-button {
+        padding: 16px 40px;
+        font-size: 20px;
+    }
+    
+    .features-card {
+        padding: 30px 20px;
+        max-width: 95%;
+        grid-template-columns: 1fr;
+    }
+    
+    .logo-container a[href="Cluckin Bell.html"] {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    header nav, footer nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    header nav a, footer nav a {
+        width: 100%;
+        max-width: 250px;
+        justify-content: center;
+    }
+    
+    .promo-card, .features-card {
+        min-width: 95%;
+        max-width: 95%;
+        padding: 30px 20px;
+    }
+    
+    .promo-title {
+        font-size: 26px;
+    }
+    
+    .reservation-main-title {
+        font-size: 24px;
+        padding: 10px;
+    }
+    
+    .notification-item {
+        padding: 15px;
+    }
+    
+    .notification-text {
+        font-size: 16px;
+        margin-left: 30px;
+    }
+    
+    .notification-text-en {
+        font-size: 14px;
+    }
+    
+    .reservation-form {
+        padding: 25px 15px;
+    }
+    
+    .form-title {
+        font-size: 22px;
+    }
+    
+    .form-label {
+        font-size: 18px;
+    }
+    
+    .form-input {
+        padding: 12px;
+        font-size: 15px;
+    }
+    
+    .reservation-button {
+        padding: 18px 30px;
+        font-size: 20px;
+        min-width: 250px;
+    }
+    
+    .success-message {
+        padding: 25px 15px;
+    }
+    
+    .success-icon {
+        font-size: 40px;
+    }
+    
+    .success-title {
+        font-size: 22px;
+    }
+    
+    .success-text {
+        font-size: 16px;
+    }
+    
+    .booking-details {
+        padding: 15px 10px;
+    }
+    
+    .detail-label,
+    .detail-value {
+        font-size: 15px;
+    }
+    
+    .reminder-text {
+        font-size: 14px;
+    }
+    
+    .close-button {
+        padding: 14px 30px;
+        font-size: 18px;
+    }
+    
+    .feature-item {
+        padding: 15px;
+    }
+    
+    .feature-icon {
+        font-size: 32px;
+    }
+    
+    .logo-container a[href="Cluckin Bell.html"] {
+        font-size: 24px;
+    }
+}
